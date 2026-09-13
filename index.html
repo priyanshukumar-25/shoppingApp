@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraStore | Premium Lifestyle & Electronics</title>
+    <meta name="description" content="Discover curated trending products, tech gadgets, fashion, and lifestyle essentials at AuraStore. Enjoy fast shipping and exclusive deals.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <span><i class="fa-solid fa-bolt"></i> Flash Sale: Extra 20% OFF with code <strong>AURA20</strong></span>
+            <div class="announcement-right">
+                <span class="location"><i class="fa-solid fa-location-dot"></i> Deliver to: <strong>Global Shipping</strong></span>
+                <span class="divider">|</span>
+                <button id="themeToggleBtn" aria-label="Toggle Theme" class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i> <span id="themeLabel">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="navbar-header" id="navbarHeader">
+        <div class="container navbar-container">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <span class="logo-text">Aura<span>Store</span></span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box-wrapper">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Search electronics, fashion, audio..." autocomplete="off">
+                    <button class="clear-search-btn" id="clearSearchBtn" hidden><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <!-- Search Suggestions Dropdown -->
+                <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="action-btn" id="wishlistBtn" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                    <span class="btn-label">Saved</span>
+                </button>
+
+                <button class="action-btn cart-action-btn" id="cartBtn" title="Shopping Cart">
+                    <div class="cart-icon-wrap">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge badge-primary" id="cartCount">0</span>
+                    </div>
+                    <div class="cart-btn-info">
+                        <span class="cart-btn-title">My Cart</span>
+                        <span class="cart-btn-subtotal" id="headerCartSubtotal">$0.00</span>
+                    </div>
+                </button>
+
+                <button class="action-btn user-btn" id="userBtn" title="Account">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="btn-label">Account</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Secondary Categories Navigation -->
+        <nav class="subnav">
+            <div class="container subnav-container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-category="all"><i class="fa-solid fa-border-all"></i> All Products</a></li>
+                    <li><a href="#" class="nav-link" data-category="electronics"><i class="fa-solid fa-laptop"></i> Electronics</a></li>
+                    <li><a href="#" class="nav-link" data-category="audio"><i class="fa-solid fa-headphones"></i> Audio & Sound</a></li>
+                    <li><a href="#" class="nav-link" data-category="wearables"><i class="fa-solid fa-watch-smart"></i> Wearables</a></li>
+                    <li><a href="#" class="nav-link" data-category="fashion"><i class="fa-solid fa-shirt"></i> Fashion</a></li>
+                    <li><a href="#" class="nav-link" data-category="accessories"><i class="fa-solid fa-glasses"></i> Accessories</a></li>
+                </ul>
+                <div class="subnav-hot-deals">
+                    <a href="#flashSaleSection" class="hot-deal-tag"><i class="fa-solid fa-fire"></i> Hot Deals</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> New Tech Release 2026</span>
+                    <h1 class="hero-title">Experience Sound Without Limits</h1>
+                    <p class="hero-subtitle">Next-generation spatial noise cancelling headphones engineered for immersive acoustic clarity and 40-hour battery life.</p>
+                    <div class="hero-actions">
+                        <a href="#productsSection" class="btn btn-primary btn-lg">
+                            <span>Explore Products</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <button class="btn btn-outline btn-lg" onclick="app.quickView(1)">
+                            <i class="fa-solid fa-circle-info"></i> Quick Preview
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4.9/5</span>
+                            <span class="stat-text"><i class="fa-solid fa-star star-filled"></i> 12k+ Reviews</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">2-Day</span>
+                            <span class="stat-text"><i class="fa-solid fa-truck-fast"></i> Express Shipping</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-text"><i class="fa-solid fa-shield-check"></i> Money Back Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <div class="glow-backdrop"></div>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Premium Wireless Headphones" class="hero-img">
+                        <div class="floating-card glass-card float-1">
+                            <i class="fa-solid fa-circle-check check-icon"></i>
+                            <div>
+                                <strong>Active Noise Cancel</strong>
+                                <span>-38dB Hybrid ANC</span>
+                            </div>
+                        </div>
+                        <div class="floating-card glass-card float-2">
+                            <span class="discount-pill">-35% OFF</span>
+                            <div>
+                                <span class="old-price">$349.00</span>
+                                <strong class="new-price">$229.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Shop by Category</h2>
+                        <p class="section-subtitle">Handpicked collections designed for your everyday lifestyle</p>
+                    </div>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card" data-category="electronics">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80" alt="Electronics">
+                        <div class="category-overlay">
+                            <div class="cat-icon"><i class="fa-solid fa-laptop"></i></div>
+                            <h3>Electronics</h3>
+                            <span>24 Items</span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="audio">
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80" alt="Audio">
+                        <div class="category-overlay">
+                            <div class="cat-icon"><i class="fa-solid fa-headphones"></i></div>
+                            <h3>Audio & Sound</h3>
+                            <span>18 Items</span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="wearables">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Smartwatches">
+                        <div class="category-overlay">
+                            <div class="cat-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                            <h3>Smart Wearables</h3>
+                            <span>15 Items</span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-category="accessories">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=500&q=80" alt="Accessories">
+                        <div class="category-overlay">
+                            <div class="cat-icon"><i class="fa-solid fa-glasses"></i></div>
+                            <h3>Modern Accessories</h3>
+                            <span>30 Items</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Sale Section with Countdown -->
+        <section class="flash-sale-section" id="flashSaleSection">
+            <div class="container">
+                <div class="flash-sale-card">
+                    <div class="flash-sale-content">
+                        <span class="sale-badge"><i class="fa-solid fa-bolt"></i> Deal of the Day</span>
+                        <h2>Limited Time Cyber Offer</h2>
+                        <p>Save up to 45% on smart wearables and audio gear. Offer ends in:</p>
+                        
+                        <div class="countdown-wrapper">
+                            <div class="time-block">
+                                <span id="cdHours">08</span>
+                                <label>Hours</label>
+                            </div>
+                            <span class="time-colon">:</span>
+                            <div class="time-block">
+                                <span id="cdMinutes">42</span>
+                                <label>Minutes</label>
+                            </div>
+                            <span class="time-colon">:</span>
+                            <div class="time-block">
+                                <span id="cdSeconds">19</span>
+                                <label>Seconds</label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-accent btn-lg" onclick="app.filterByCategory('wearables')">
+                            Shop Flash Deals <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="flash-sale-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80" alt="Smartwatch Special Deal">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Products Showcase Section -->
+        <section class="products-section" id="productsSection">
+            <div class="container">
+                <div class="products-section-header">
+                    <div>
+                        <h2 class="section-title">Trending Products</h2>
+                        <p class="section-subtitle">Explore top-rated items selected just for you</p>
+                    </div>
+
+                    <!-- Filters and Sort Controls -->
+                    <div class="controls-bar">
+                        <div class="filter-pills" id="categoryPills">
+                            <button class="pill active" data-category="all">All</button>
+                            <button class="pill" data-category="electronics">Electronics</button>
+                            <button class="pill" data-category="audio">Audio</button>
+                            <button class="pill" data-category="wearables">Wearables</button>
+                            <button class="pill" data-category="accessories">Accessories</button>
+                        </div>
+
+                        <div class="sort-wrapper">
+                            <label for="sortSelect"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort by:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+
+                <!-- Empty State if search yields no results -->
+                <div class="empty-state" id="emptyState" hidden>
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    <h3>No products found</h3>
+                    <p>Try searching for a different keyword or resetting filters.</p>
+                    <button class="btn btn-outline" onclick="app.resetFilters()">Reset All Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions / Features Banner -->
+        <section class="features-bar-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div>
+                            <h4>Free Express Shipping</h4>
+                            <p>On all orders over $75.00 worldwide</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                        <div>
+                            <h4>30-Day Easy Returns</h4>
+                            <p>Hassle-free money back guarantee</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Secure Checkout</h4>
+                            <p>256-Bit SSL Encryption protection</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div>
+                            <h4>24/7 Support</h4>
+                            <p>Dedicated customer service team</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <span class="newsletter-tag"><i class="fa-solid fa-envelope"></i> Join Aura Club</span>
+                        <h2>Get 15% OFF Your First Purchase</h2>
+                        <p>Subscribe to our newsletter for exclusive insider deals, new product launches, and special promo codes.</p>
+                        <form id="newsletterForm" class="newsletter-form">
+                            <div class="input-group">
+                                <i class="fa-regular fa-envelope input-icon"></i>
+                                <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                        </form>
+                        <div id="newsletterSuccess" class="newsletter-success" hidden>
+                            <i class="fa-solid fa-circle-check"></i> Thank you! Your 15% discount code is <strong>WELCOME15</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <a href="#" class="brand-logo footer-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <span class="logo-text">Aura<span>Store</span></span>
+                    </a>
+                    <p>Elevating your digital and aesthetic lifestyle with premium products, sleek designs, and fast global delivery.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About AuraStore</a></li>
+                        <li><a href="#">Our Collections</a></li>
+                        <li><a href="#">Latest Arrivals</a></li>
+                        <li><a href="#">Flash Deals</a></li>
+                        <li><a href="#">Customer Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Help & Support Center</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Shipping & Delivery Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Payment & Trust</h4>
+                    <p>We accept all major secure payment gateways:</p>
+                    <div class="payment-methods">
+                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+                        <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraStore Inc. All rights reserved. Crafting premium online shopping experiences.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-over Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Shopping Cart (<span id="drawerCartCount">0</span>)</h3>
+            <button class="close-drawer-btn" id="closeCartBtn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-body" id="cartItemsList">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">$0.00</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Estimated Shipping</span>
+                <strong class="text-success" id="cartShipping">FREE</strong>
+            </div>
+            <div class="cart-summary-line total-line">
+                <span>Total Amount</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">
+                Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-link btn-block" id="continueShoppingBtn">Continue Shopping</button>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickViewOverlay"></div>
+    <div class="quick-view-modal" id="quickViewModal" role="dialog" aria-hidden="true">
+        <button class="close-modal-btn" id="closeQuickViewBtn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-body" id="quickViewContent">
+            <!-- Rendered dynamically -->
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
